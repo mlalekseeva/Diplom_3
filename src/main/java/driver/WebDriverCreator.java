@@ -45,10 +45,4 @@ public class WebDriverCreator {
         options.setBinary(System.getenv("YANDEX_BROWSER_PATH"));
         return new ChromeDriver(options);
     }
-
-
-
-
-
-
 }

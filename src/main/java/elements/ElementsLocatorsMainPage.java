@@ -3,7 +3,6 @@ package elements;
 import org.openqa.selenium.By;
 
 public class ElementsLocatorsMainPage {
-
     public By personalAccountButton = By.xpath(".//a[@href='/account']/p[text()='Личный Кабинет']");
     public By loginToPersonalAccountButton = By.className("button_button__33qZ0");
     public By createOrderButton = By.xpath(".//div[@class='BurgerConstructor_basket__container__2fUl3 mt-10']/button");

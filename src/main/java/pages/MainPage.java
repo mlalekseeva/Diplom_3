@@ -5,9 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class MainPage {
-
     private WebDriver driver;
-
     ElementsLocatorsMainPage objElementsLocatorsMainPage = new ElementsLocatorsMainPage();
 
     public MainPage(WebDriver driver) {
@@ -65,11 +63,5 @@ public class MainPage {
     public void goToFillingSection() {
         driver.findElement(objElementsLocatorsMainPage.fillingSectionUnselected).click();
     }
-
-
-
-
-
-
 
 }

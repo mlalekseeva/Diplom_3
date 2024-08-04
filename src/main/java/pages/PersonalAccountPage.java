@@ -7,9 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class PersonalAccountPage {
-
     private WebDriver driver;
-
     ElementsLocatorsPersonalAccountPage objElementsLocatorsPersonalAccountPage = new ElementsLocatorsPersonalAccountPage();
 
     public PersonalAccountPage(WebDriver driver) {

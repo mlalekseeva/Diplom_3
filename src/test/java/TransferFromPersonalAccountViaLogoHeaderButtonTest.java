@@ -18,13 +18,9 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static utils.Utils.randomString;
 
 public class TransferFromPersonalAccountViaLogoHeaderButtonTest {
-
     private WebDriver driver;
-
     private User userCreate;
-
     UserSteps userSteps = new UserSteps();
-
     private String name = randomString(20);
     private String email = randomString(10) + "@yandex.ru";
     private String password = randomString(6);
@@ -41,7 +37,6 @@ public class TransferFromPersonalAccountViaLogoHeaderButtonTest {
 
         Response responseCreate = userSteps.sendPostRequestAuthRegister(userCreate);
         token = responseCreate.path("accessToken").toString();
-
     }
 
     @Test
@@ -55,7 +50,6 @@ public class TransferFromPersonalAccountViaLogoHeaderButtonTest {
         transferToPersonalAccount(objMainPage);
         transferToConstructorViaLogo(objPersonalAccountPage);
         checkConstructorIsOpen(objMainPage);
-
     }
 
     @Step("Подговка тестовых данных: пользователь залогинен на сайте")

@@ -4,15 +4,11 @@ import elements.ElementsLocatorsLoginPage;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
-
     private WebDriver driver;
-
     ElementsLocatorsLoginPage objElementsLocatorsLoginPage = new ElementsLocatorsLoginPage();
-
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
-
 
     public void checkLoginButtonIsDisplayed() {
         driver.findElement(objElementsLocatorsLoginPage.loginButton).isDisplayed();
@@ -29,9 +25,5 @@ public class LoginPage {
     public void clickLoginButton() {
         driver.findElement(objElementsLocatorsLoginPage.loginButton).click();
     }
-
-
-
-
 
 }

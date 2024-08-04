@@ -17,9 +17,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static utils.Utils.randomString;
 
 public class TransferToPersonalAccountFromMainPageWithoutAuthTest {
-
     private WebDriver driver;
-
 
     @Before
     public void setUp() {
@@ -35,7 +33,6 @@ public class TransferToPersonalAccountFromMainPageWithoutAuthTest {
         LoginPage objLoginPage = new LoginPage(driver);
         transferToPersonalAccount(objMainPage);
         checkLoginPageIsOpen(objLoginPage);
-
     }
 
     @Step("Перейти в личный кабинет с главной страницы")
@@ -51,6 +48,5 @@ public class TransferToPersonalAccountFromMainPageWithoutAuthTest {
     @After
     public void tearDown() {
         driver.quit();
-
     }
 }

@@ -22,13 +22,9 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static utils.Utils.randomString;
 
 public class TransferToPersonalAccountFromMainPageWithAuthTest {
-
     private WebDriver driver;
-
     private User userCreate;
-
     UserSteps userSteps = new UserSteps();
-
     private String name = randomString(20);
     private String email = randomString(10) + "@yandex.ru";
     private String password = randomString(6);
@@ -45,7 +41,6 @@ public class TransferToPersonalAccountFromMainPageWithAuthTest {
 
         Response responseCreate = userSteps.sendPostRequestAuthRegister(userCreate);
         token = responseCreate.path("accessToken").toString();
-
     }
 
     @Test
@@ -58,7 +53,6 @@ public class TransferToPersonalAccountFromMainPageWithAuthTest {
         loginUser(objMainPage, objLoginPage);
         transferToPersonalAccount(objMainPage);
         checkUserIsOnPersonalAccountPage(objPersonalAccountPage);
-
     }
 
     @Step("Подговка тестовых данных: пользователь залогинен на сайте")

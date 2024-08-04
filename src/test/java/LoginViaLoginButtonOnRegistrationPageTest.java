@@ -16,13 +16,9 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static utils.Utils.randomString;
 
 public class LoginViaLoginButtonOnRegistrationPageTest {
-
     private WebDriver driver;
-
     private User userCreate;
-
     UserSteps userSteps = new UserSteps();
-
     private String name = randomString(20);
     private String email = randomString(10) + "@yandex.ru";
     private String password = randomString(6);
@@ -39,7 +35,6 @@ public class LoginViaLoginButtonOnRegistrationPageTest {
 
         Response responseCreate = userSteps.sendPostRequestAuthRegister(userCreate);
         token = responseCreate.path("accessToken").toString();
-
     }
 
     @Test
@@ -55,7 +50,6 @@ public class LoginViaLoginButtonOnRegistrationPageTest {
         fillInUserPassword(objLoginPage);
         clickFinishLoginButtonOnLoginPage(objLoginPage);
         checkUserIsLoggedIn(objMainPage, objPersonalAccountPage);
-
     }
 
     @Step("Нажать на кнопку входа на странице регистрации")
@@ -83,8 +77,6 @@ public class LoginViaLoginButtonOnRegistrationPageTest {
         objMainPage.clickPersonalAccountButton();
         objPersonalAccountPage.checkLogoutButtonIsDisplayed();
     }
-
-
 
     @After
     public void tearDown() {

@@ -14,7 +14,6 @@ import static driver.WebDriverCreator.createWebDriver;
 import static utils.Utils.randomString;
 
 public class RegistrationTest {
-
     private WebDriver driver;
 
     @Before
@@ -33,7 +32,6 @@ public class RegistrationTest {
         fillInNewUserCorrectPassword(objRegistrationPage);
         clickButtonToGetRegistration(objRegistrationPage);
         checkIfRegistrationIsSuccessful(objLoginPage);
-
     }
 
     @Test
@@ -46,7 +44,6 @@ public class RegistrationTest {
         fillInNewUserIncorrectPassword(objRegistrationPage);
         clickButtonToGetRegistration(objRegistrationPage);
         checkIfRegistrationNotSuccessful(objRegistrationPage);
-
     }
 
     @Step("Ввести имя нового пользователя")

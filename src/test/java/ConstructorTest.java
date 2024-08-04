@@ -24,15 +24,31 @@ public class ConstructorTest {
     }
 
     @Test
-    public void transferBetweenSections() {
+    public void transferFromBunToSauceSections() {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.get("https://stellarburgers.nomoreparties.site/");
         MainPage objMainPage = new MainPage(driver);
         checkOriginalConstructorState(objMainPage);
         checkConstructorStateAfterTransferToSauceSection(objMainPage);
-        checkConstructorStateAfterTransferToFillingSection(objMainPage);
-        checkConstructorStateAfterTransferToBunSection(objMainPage);
+    }
 
+    @Test
+    public void transferFromBunToFillingSections() {
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.get("https://stellarburgers.nomoreparties.site/");
+        MainPage objMainPage = new MainPage(driver);
+        checkOriginalConstructorState(objMainPage);
+        checkConstructorStateAfterTransferToFillingSection(objMainPage);
+    }
+
+    @Test
+    public void transferFromSauceToBunSections() {
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.get("https://stellarburgers.nomoreparties.site/");
+        MainPage objMainPage = new MainPage(driver);
+        checkOriginalConstructorState(objMainPage);
+        checkConstructorStateAfterTransferToSauceSection(objMainPage);
+        checkConstructorStateAfterTransferToBunSection(objMainPage);
     }
 
     @Step("Проверка исходного состояния конструктора при открытии главной страницы: выбран раздел Булки, не выбраны разделы Соусы и Начинки")
@@ -69,7 +85,6 @@ public class ConstructorTest {
     @After
     public void tearDown() {
         driver.quit();
-
     }
 
 }

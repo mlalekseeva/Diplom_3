@@ -16,13 +16,9 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static utils.Utils.randomString;
 
 public class LoginViaLoginToPersonalAccountButtonTest {
-
     private WebDriver driver;
-
     private User userCreate;
-
     UserSteps userSteps = new UserSteps();
-
     private String name = randomString(20);
     private String email = randomString(10) + "@yandex.ru";
     private String password = randomString(6);
@@ -39,7 +35,6 @@ public class LoginViaLoginToPersonalAccountButtonTest {
 
         Response responseCreate = userSteps.sendPostRequestAuthRegister(userCreate);
         token = responseCreate.path("accessToken").toString();
-
     }
 
     @Test
@@ -54,7 +49,6 @@ public class LoginViaLoginToPersonalAccountButtonTest {
         fillInUserPassword(objLoginPage);
         clickFinishLoginButtonOnLoginPage(objLoginPage);
         checkUserIsLoggedIn(objMainPage, objPersonalAccountPage);
-
     }
 
     @Step("Нажать на кнопку входа на главной странице")
@@ -83,13 +77,10 @@ public class LoginViaLoginToPersonalAccountButtonTest {
         objPersonalAccountPage.checkLogoutButtonIsDisplayed();
     }
 
-
-
     @After
     public void tearDown() {
         driver.quit();
         Response responseDelete = userSteps.sendDeleteRequestAuthUser(token);
         responseDelete.then().body("success", equalTo(true)).and().body("message", equalTo("User successfully removed"));
     }
-
 }

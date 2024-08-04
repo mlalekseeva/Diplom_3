@@ -4,11 +4,8 @@ import elements.ElementsLocatorsRegistratePage;
 import org.openqa.selenium.WebDriver;
 
 public class RegistrationPage {
-
     private WebDriver driver;
-
     ElementsLocatorsRegistratePage objElementsLocatorsRegistratePage = new ElementsLocatorsRegistratePage();
-
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -36,6 +33,5 @@ public class RegistrationPage {
     public void clickLoginButton() {
         driver.findElement(objElementsLocatorsRegistratePage.loginButton).click();
     }
-
 
 }
